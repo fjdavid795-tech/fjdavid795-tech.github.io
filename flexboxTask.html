@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Task</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #eaeaea;
+        }
+
+        .section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
+
+        .section h2 {
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .exercise {
+            margin-bottom: 25px;
+        }
+
+        .exercise p {
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .flex {
+            display: flex;
+            background: #ccc;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .box {
+            background: #2980b9;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-radius: 3px;
+        }
+
+        .ex12a .box:first-child { width: 200px; }
+        .ex12a .box:last-child { width: 75px; }
+
+        .ex12b .box:first-child { width: 50px; }
+        .ex12b .box:nth-child(2) { flex: 1; }
+        .ex12b .box:last-child { width: 75px; }
+
+        .ex12c { justify-content: space-between; }
+        .ex12c .box { flex: 1; margin: 0 5px; }
+        .ex12c .box:first-child { margin-left: 0; }
+        .ex12c .box:last-child { margin-right: 0; }
+
+        .ex12d {
+            height: 50px;
+            border: 2px solid gray;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Part 2 Layout */
+        .layout {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #aaa;
+        }
+
+        .header {
+            background: #2c3e50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .middle {
+            display: flex;
+            flex-direction: row;
+            min-height: 180px;
+        }
+
+        .left {
+            background: #f9e6b3;
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+            border-right: 1px solid #ccc;
+        }
+
+        .right {
+            background: #c8e6c9;
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer {
+            background: #7f8c8d;
+            color: white;
+            padding: 12px;
+            text-align: center;
+        }
+
+        /* BREAKPOINT 1: 800px and above */
+        @media (min-width: 800px) {
+            .middle {
+                flex-direction: row;
+            }
+        }
+
+        /* BREAKPOINT 2: 400px and below */
+        @media (max-width: 400px) {
+            .middle {
+                flex-direction: column;
+            }
+            .left { order: 2; border-right: none; border-top: 1px solid #ccc; }
+            .right { order: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="section">
+    <h2>Part 1</h2>
+
+    <div class="exercise">
+        <p>12a</p>
+        <div class="flex ex12a">
+            <div class="box">200px</div>
+            <div class="box">75px</div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <p>12b</p>
+        <div class="flex ex12b">
+            <div class="box">item1</div>
+            <div class="box">item2</div>
+            <div class="box">item3</div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <p>12c</p>
+        <div class="flex ex12c">
+            <div class="box">item1</div>
+            <div class="box">item2</div>
+            <div class="box">item3</div>
+            <div class="box">item4</div>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <p>12d</p>
+        <div class="flex ex12d">
+            <div class="box">item1</div>
+            <div class="box">item2</div>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <h2>Part 2</h2>
+    <p style="margin-bottom: 15px; font-size: 13px; color: #666;">≥800px: row | ≤400px: column with right-nav on top</p>
+
+    <div class="layout">
+        <div class="header">This is a Header</div>
+        <div class="middle">
+            <div class="left">section left-nav</div>
+            <div class="right">section right-nav</div>
+        </div>
+        <div class="footer">This is a footer</div>
+    </div>
+</div>
+
+</body>
+</html>
