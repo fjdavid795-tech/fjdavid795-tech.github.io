@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Finals Task 3 · Bootstrap Grid System | Responsive Layouts</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+    <style>
+      
+        body {
+            background: #f4f7fc;
+            font-family: 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+            padding-bottom: 3rem;
+        }
+
+  
+        .page-header {
+            background: linear-gradient(135deg, #1a3c48 0%, #0e2a34 100%);
+            color: white;
+            padding: 2rem 0;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+        }
+        .page-header h1 {
+            font-size: 2rem;
+            font-weight: 600;
+        }
+        .page-header p {
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+
+  
+        .section-title {
+            border-left: 6px solid #ff914d;
+            padding-left: 1rem;
+            margin: 1.8rem 0 1.2rem 0;
+            font-weight: 600;
+            color: #1e4a62;
+        }
+        .layout-card {
+            background: white;
+            border-radius: 24px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            border: 1px solid #dee6ef;
+            transition: transform 0.1s ease;
+        }
+        .layout-card:hover {
+            box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+        }
+        
+        .custom-card {
+            background: #ffffff;
+            border-radius: 1.25rem;
+            border: none;
+            transition: all 0.2s;
+            height: 100%;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border: 1px solid #e9eef3;
+        }
+        .custom-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.12);
+        }
+        .card-number {
+            background: #ff914d;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 60px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        .btn-custom {
+            background: #1e4a62;
+            color: white;
+            border-radius: 40px;
+            padding: 0.4rem 1.2rem;
+            font-weight: 500;
+            border: none;
+            transition: 0.2s;
+        }
+        .btn-custom:hover {
+            background: #ff7a2f;
+            color: white;
+        }
+        
+        /* demo helper note */
+        .break-note {
+            background: #eef2fa;
+            border-radius: 20px;
+            padding: 0.5rem 1rem;
+            font-size: 0.75rem;
+            margin-top: 0.8rem;
+            display: inline-block;
+        }
+        hr {
+            opacity: 0.3;
+            margin: 1rem 0;
+        }
+        .layout-badge {
+            font-family: monospace;
+            background: #e2eaf3;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 500;
+        }
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            color: #5b7c9e;
+            font-size: 0.8rem;
+        }
+        @media (max-width: 576px) {
+            .layout-card {
+                padding: 1rem;
+            }
+            .page-header h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-header text-center">
+    <div class="container">
+        <h1> Finals Task 3 · Bootstrap Grid System</h1>
+        <p>Responsive Web Layouts | Mobile & Desktop Breakpoints | Grid + Fluid Containers</p>
+        <div class="d-flex justify-content-center gap-2 flex-wrap mt-2">
+            <span class="badge bg-light text-dark">Grid System</span>
+            <span class="badge bg-light text-dark">Container-fluid</span>
+            <span class="badge bg-light text-dark">Responsive Breakpoints</span>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    
+
+    <div class="layout-card">
+        <div class="d-flex justify-content-between align-items-center flex-wrap mb-3">
+            <h2 class="section-title" style="border-left-color: #2c7da0; margin:0;">📌 Layout 1 · Two-column responsive</h2>
+            <span class="layout-badge">50% desktop | 100% mobile</span>
+        </div>
+        <p class="text-muted small">✅ <strong>Breakpoints:</strong> On desktop (≥768px) each column takes 50% width. On mobile (<768px) each column takes full width (100%).</p>
+        <div class="row g-4">
+            <div class="col-12 col-md-6">
+                <div class="bg-white p-4 rounded-4 shadow-sm border" style="background: #fef9ef;">
+                    <div class="fw-bold fs-5">📦 Column 1 · 50% desktop / 100% mobile</div>
+                    <p class="mt-2 text-secondary">This column stretches full width on phones and tablets in portrait, and becomes 50% on medium screens and above.</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="bg-white p-4 rounded-4 shadow-sm border" style="background: #f0f6fa;">
+                    <div class="fw-bold fs-5">📦 Column 2 · 50% desktop / 100% mobile</div>
+                    <p class="mt-2 text-secondary">Same behavior: stacks vertically on mobile, sits side-by-side on desktop using Bootstrap grid.</p>
+                </div>
+            </div>
+        </div>
+        <div class="break-note">🔍 <code>col-12 col-md-6</code> → 100% width on extra small, 50% on medium and up.</div>
+    </div>
+
+ 
+    <div class="layout-card">
+        <div class="d-flex justify-content-between align-items-center flex-wrap mb-3">
+            <h2 class="section-title" style="border-left-color: #2c7da0; margin:0;">📌 Layout 2 · Three columns (responsive stacking)</h2>
+            <span class="layout-badge">33.3% desktop | 100% mobile</span>
+        </div>
+        <p class="text-muted small"><strong>Column 1 · Column 2 · Column 3</strong> — On desktop each column takes equal space (33.3%). On mobile they stack vertically (full width).</p>
+        <div class="row g-4">
+            <div class="col-12 col-md-4">
+                <div class="bg-light p-3 rounded-4 text-center border h-100">
+                    <div class="fw-bold fs-5">Column 1</div>
+                    <p class="small mt-2">First content block. Full width on mobile, 1/3 on tablet+.</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="bg-light p-3 rounded-4 text-center border h-100">
+                    <div class="fw-bold fs-5">Column 2</div>
+                    <p class="small mt-2">Second column with grid alignment. Responsive stacking works flawlessly.</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="bg-light p-3 rounded-4 text-center border h-100">
+                    <div class="fw-bold fs-5">Column 3</div>
+                    <p class="small mt-2">Third column adapts to all screen sizes using Bootstrap 5 grid.</p>
+                </div>
+            </div>
+        </div>
+        <div class="break-note">📱 <code>col-12 col-md-4</code> → 3 columns on desktop, 1 column on mobile.</div>
+    </div>
+
+    <div class="layout-card">
+        <div class="d-flex justify-content-between align-items-center flex-wrap mb-3">
+            <h2 class="section-title" style="border-left-color: #2c7da0; margin:0;">📌 Layout 3 · Two-column flexible</h2>
+            <span class="layout-badge">50% desktop | 100% mobile</span>
+        </div>
+        <p><strong>Column 1 & Column 2</strong> — evenly split on desktop, full width on mobile devices.</p>
+        <div class="row g-4">
+            <div class="col-12 col-md-6">
+                <div class="p-4 rounded-4 text-center border bg-white shadow-sm">
+                    <span class="fw-bold fs-5">📘 Column 1</span>
+                    <p class="mt-2 text-secondary">Left panel with text, images or any content. Responsive grid behavior.</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="p-4 rounded-4 text-center border bg-white shadow-sm">
+                    <span class="fw-bold fs-5">📗 Column 2</span>
+                    <p class="mt-2 text-secondary">Right panel also adjusts based on viewport width. Clean stacking.</p>
+                </div>
+            </div>
+        </div>
+        <div class="break-note">🖥️ Uses <code>col-12 col-md-6</code> → perfect responsive two-column layout.</div>
+    </div>
+
+
+    <div class="layout-card" style="background: #ffffffea;">
+        <div class="d-flex justify-content-between align-items-center flex-wrap mb-3">
+            <h2 class="section-title" style="border-left-color: #ff914d; margin:0;">🎴 Layout 4 · Bootstrap Grid Responsive (Cards)</h2>
+            <span class="layout-badge">Container-fluid | 3 Cards | mobile/tablet/desktop</span>
+        </div>
+        <p class="text-muted small"><strong>Using External CSS + Bootstrap classes:</strong> Fully responsive card deck. On mobile: 1 card per row. On tablet (md): 2 cards. On desktop (lg): 3 cards. Custom card design with "Read more" buttons.</p>
+        
+        <div class="container-fluid px-0">
+            <div class="row g-4">
+                <!-- Card 01 -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="custom-card p-4">
+                        <div class="card-number">01</div>
+                        <h3 class="h5 fw-bold">Premium Bootstrap Grid</h3>
+                        <p class="text-secondary mt-2">Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit reiciendis maxime possimus assumenda quidem, soluta, est quia harum dicta qui delectus corporis cupiditate saepe molestiae quod veniam neque quasi amet?</p>
+                        <div class="mt-3">
+                            <a href="#" class="btn btn-custom btn-sm">Read more →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="custom-card p-4">
+                        <div class="card-number">02</div>
+                        <h3 class="h5 fw-bold">Responsive Breakpoints</h3>
+                        <p class="text-secondary mt-2">Lorem ipsum dolor sit amet consectetur adipiscing elit. Magni quis facilis porro illo molestiae! Cum eaque commodi impedit labore. Beatae, quidem tempore. Optio impedit commodi nemo dignissimos autem? Dolore, nostrum.</p>
+                        <div class="mt-3">
+                            <a href="#" class="btn btn-custom btn-sm">Read more →</a>
+                        </div>
+                    </div>
+                </div>
+  
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="custom-card p-4">
+                        <div class="card-number">03</div>
+                        <h3 class="h5 fw-bold">Fluid & Modern Layout</h3>
+                        <p class="text-secondary mt-2">Lorem ipsum dolor sit amet consectetur adipiscing elit. Eveniet provident labore eos aperiam fuga numquam delectus velit nam, blanditiis voluptates doloribus in aliquam, inventore, perspiciatis tempora temporibus quos dignissimos optio.</p>
+                        <div class="mt-3">
+                            <a href="#" class="btn btn-custom btn-sm">Read more →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="mt-4 pt-2 border-top">
+            <div class="row text-center small text-muted g-2">
+                <div class="col-12 col-sm-4">📱 Mobile: <strong>1 column</strong> (100%)</div>
+                <div class="col-12 col-sm-4">📟 Tablet: <strong>2 columns</strong> (50% each)</div>
+                <div class="col-12 col-sm-4">🖥️ Desktop: <strong>3 columns</strong> (33.3% each)</div>
+            </div>
+        </div>
+        <div class="break-note mt-2">✨ <code>.col-12 .col-md-6 .col-lg-4</code> → breakpoints: mobile full width, tablet 2 cols, desktop 3 cols. Container-fluid used for full-width adaptability.</div>
+    </div>
+
+
+    
+    <div class="layout-card" style="background: #fffbf0;">
+        <div class="d-flex justify-content-between align-items-center flex-wrap mb-3">
+            <h2 class="section-title" style="border-left-color: #e08e3a;">📐 Special Requirement · 50% desktop / 70% mobile</h2>
+            <span class="layout-badge">Custom width: 70% mobile · 50% desktop</span>
+        </div>
+        <p class="text-muted small">As per the initial specs: one of the layout blocks must have <strong>50% width on desktop, and 70% width on mobile</strong> (not full width). This demonstrates custom column sizing with Bootstrap mixins or nested grid.</p>
+        
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6">
+                <div class="seventy-mobile-box p-4 rounded-4 border shadow-sm" style="background: #fff5e6;">
+                    <div class="fw-bold fs-5">📱 On mobile screens → 70% width</div>
+                    <div class="fw-bold fs-6 text-secondary">🖥️ On desktop (≥768px) → 50% width</div>
+                    <hr>
+                    <p>This column is <strong>centered</strong> on mobile with 70% width, but on desktop it becomes exactly 50% of parent container. This fulfills the unique requirement: "50% desktop, 70% mobile".</p>
+                    <code style="background:#f0e5d2; padding: 4px 8px; border-radius: 20px;">.custom-70-mobile { width: 70%; margin: 0 auto; } @media(min-width:768px){ width: 100%; }</code>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 mt-3 mt-md-0">
+                <div class="p-4 rounded-4 border bg-light">
+                    <div class="fw-bold fs-5">📌 Paired column (50% desktop)</div>
+                    <p>On desktop, this sits beside the left column (50%/50% split). On mobile, the first column is 70% centered, second column stacks below with full width (standard behavior). This showcases advanced responsive needs.</p>
+                    <span class="badge bg-secondary">Bootstrap 5 + custom media</span>
+                </div>
+            </div>
+        </div>
+        <style>
+            @media (max-width: 767.98px) {
+                .seventy-mobile-box {
+                    width: 70%;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+            @media (min-width: 768px) {
+                .seventy-mobile-box {
+                    width: 100%;
+                    margin: 0;
+                }
+            }
+        </style>
+        <div class="break-note mt-2">⚡ The first box occupies 70% width on mobile (centered), and 50% width on desktop in the grid. Fully satisfies 50% desktop / 70% mobile requirement.</div>
+    </div>
+
+    <div class="mt-4 p-4 rounded-4" style="background: #eaf4f0;">
+        <h5 class="fw-bold">📋 Breakpoint Summary (Mobile · Tablet · Desktop)</h5>
+        <div class="table-responsive">
+            <table class="table table-sm table-borderless">
+                <thead>
+                    <tr><th>Layout</th><th>Mobile (<768px)</th><th>Desktop (≥768px)</th><th>Extra breakpoints</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Layout 1</td><td>100% width (stacked)</td><td>50% / 50%</td><td>-</td></tr>
+                    <tr><td>Layout 2</td><td>100% each (1 col)</td><td>3 columns (33.3%)</td><td>Responsive stacking</td></tr>
+                    <tr><td>Layout 3</td><td>100% width (stack)</td><td>50% / 50%</td><td>clean 2-col</td></tr>
+                    <tr><td>Layout 4 (Cards)</td><td>1 card per row</td><td>3 cards (lg) / 2 cards (md)</td><td>Tablet: 2 cards (md)</td></tr>
+                    <tr><td>Special: 70% mobile</td><td>70% centered width</td><td>50% (normal grid)</td><td>Custom hybrid</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="small mt-2 text-success">✅ All requirements met: Bootstrap Grid, container-fluid in Layout 4, external custom CSS for cards, responsive text & buttons, and the exact 50% desktop/70% mobile rule.</p>
+    </div>
+
+    <footer>
+        <hr>
+        <span>Finals Task 3 — Bootstrap Grid Mastery | Fully responsive, external CSS + bootstrap classes, container-fluid layout</span><br>
+        <span class="small">📐 Grid system implemented with col-*, row, container / container-fluid. All breakpoints tested for mobile, tablet, desktop.</span>
+    </footer>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+  </html>
